@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Login Portal de Cadastro">
+    <meta name="keywords" content="">
+    <meta name="author" content="Codescandy">
+    <title>Login Portal de Cadastro</title>
+    <!-- Favicon icon-->
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/logo_fav_atmos.png">
+
+<!-- CSS -->
+<link rel="stylesheet" href="assets/libs/bootstrap-icons/font/bootstrap-icons.css">
+<link rel="stylesheet" href="assets/css/theme.min.css">
+
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="assets/js/js_login.js"></script>
+</head>
+
+<body>
+    <!-- sign in -->
+    <div class="min-vh-100 d-flex align-items-center" style="background:#F5F5F6">
+        <div class="container">
+            <div class="row">
+                <div class="offset-lg-3 col-lg-6 col-12">
+                    <div class="p-4 p-lg-8 rounded-3" style="background-color:#FFFFFF; border-top: solid 3px #274583;">
+                        <a href="index.html" class="mb-4 d-flex justify-content-center">
+                            <!-- <img src="assets/images/logo_atmos.png" alt="logo" style="zoom:60%;"> -->
+                            <img src="assets/images/logo_beta_azul.png" alt="logo" style="zoom:15%;">
+                        </a>
+                        <!--<p class="mb-4" style="color:#848484;">Seja bem-vindo(a) ao Portal de Cadastro da Atmos Capital.</p> -->
+                        <p class="mb-4" style="color:#848484;">Seja bem-vindo(a) ao Portal de Cadastro da Gestora XXXXXXXX.</p>
+                        <form class="campos_usuario_cadastrado">
+                            <div class="mb-3">
+                                <label for="CPF" class="form-label"  style="color:#848484;">CPF </label>
+                                <input name="cpf" type="text" id="cpf" class="form-control"  placeholder="CPF (somente numeros)" required="" style="border: solid 2px #f3f3f3;" required>
+                                <div class="cpf_invalido invalid-feedback" style="display: none;"><span class="text_msg"></span></div>
+                            </div>
+                            <div class="mb-3 mb-4">
+                                <label class="form-label"  style="color:#848484;">Código de Verificação</label>
+                                <input type="password" id="input_codigo_verificacao" class="form-control" required="" style="border: solid 2px #f3f3f3;" disabled>
+                                <div class="codigo_invalido invalid-feedback" style="display: none;">Código inválido.</div>
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-primary campos_usuario_cadastrado" id="btn_send_code">
+                                    <span class="loader_btn_verificacao" style="display:none;">
+                                          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                          <span class="sr-only"></span>
+                                    </span>
+                                    Enviar Código de Verificação
+                                </button>
+                                <button class="btn btn-primary" id="btn_login" type="submit" style="display: none;">
+                                    <span class="loader_btn_login" style="display:none;">
+                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                        <span class="sr-only"></span>
+                                    </span>
+                                    Fazer Login
+                                </button>
+                            </div>
+                            <div class="d-lg-flex justify-content-between mt-2 mb-3">
+                                <p class="text-muted font-14 campos_usuario_cadastrado">
+                                    Ainda não é cadastrado? <a href="" class="btn_fazer_cadastro" style="color:#6AA1A6">Clique aqui</a>
+                                </p>
+                                <p class="font-14">
+                                    <a href="" style="color:#6AA1A6" class="btn_cancelar">Cancelar</a>
+                                </p>
+                            </div>
+                        </form>    
+                        <form class="campos_cadastro_usuario" style="display:none;">
+                            <div class="row">
+                                <div class="mb-3 col-6" style="padding-right:8px;">
+                                    <label for="CPF" class="form-label"  style="color:#848484;">CPF </label>
+                                    <input name="cpf" type="text" id="cpf_novo" class="form-control"  placeholder="CPF (somente numeros)" style="border: solid 2px #f3f3f3;" required>
+                                    <div class="cpf_novo_invalido invalid-feedback" style="display: none;"><span class="text_msg"></span></div>
+                                </div>
+                                <div class="mb-3 col-6" style="padding-left:8px;">
+                                    <label for="data_nascimento" class="form-label"  style="color:#848484;">Data de Nascimento</label>
+                                    <input name="data_nascimento" type="date" id="data_nascimento" class="form-control"  style="border: solid 2px #f3f3f3;" required>
+                                    <div class="data_nascimento_invalido invalid-feedback" style="display: none;"><span class="text_msg"></span></div>
+                                </div>
+                            </div>
+                            <div class="mb-3"> 
+                                <label for="nome_usuario" class="form-label"  style="color:#848484;">Nome Completo</label>
+                                <input name="nome_usuario" type="text" id="nome_usuario" class="form-control"  style="border: solid 2px #f3f3f3;" required>
+                                <div class="nome_usuario_invalido invalid-feedback" style="display: none;"><span class="text_msg"></span></div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3 col-6" style="padding-right:8px; padding-bottom:8px;">
+                                    <label for="email" class="form-label" style="color:#848484;">Email</label>
+                                    <input name="email" type="email" id="email" class="form-control" style="border: solid 2px #f3f3f3;" required>
+                                    <div class="erro_email invalid-feedback" style="display: none;"><span class="text_msg"></span></div>
+                                </div>
+                                <div class="mb-3 col-6" style="padding-left:8px;  padding-bottom:8px;">
+                                    <label for="email_verify" class="form-label" style="color:#848484;">Verificação Email</label>
+                                    <input name="email_verify" type="email" id="email_verify" class="form-control" style="border: solid 2px #f3f3f3;" required>
+                                    <div class="erro_verify_email invalid-feedback" style="display: none;"><span class="text_msg"></span></div>
+                                </div>
+                            </div>
+
+                            <div class="d-grid">
+                                <button class="btn btn-primary" id="btn_cadastrar_usuario" type="submit">
+                                    <span class="loader_btn_cadastrar_usuario" style="display:none;">
+                                          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                          <span class="sr-only"></span>
+                                    </span>
+                                    Cadastrar Usuário
+                                </button>
+                            </div>
+
+                            <div class="d-lg-flex justify-content-between mt-2 mb-3">
+                                <p class="text-muted font-14">
+                                    <a href="" class="btn_voltar_login" style="color:#6AA1A6">Voltar para o login</a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- Libs JS -->
+<script src="assets/libs/jquery/dist/jquery.min.js"></script>
+<script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/libs/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+
+
+<!-- Theme JS -->
+<script src="assets/js/theme.min.js"></script>
+</body>
+
+</html>
