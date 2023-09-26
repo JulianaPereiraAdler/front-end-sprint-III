@@ -1,0 +1,1909 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="description" content="Portal Cadastro">
+        <meta name="keywords" content="">
+        <meta name="author" content="Codescandy">
+        
+        <title>Portal Cadastro</title>
+        <!-- Favicon icon-->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo_fav_atmos.png">
+
+        <!-- Libs CSS -->
+        <link rel="stylesheet" href="assets/libs/bootstrap-icons/font/bootstrap-icons.css">
+        <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+
+        <!-- Theme CSS -->
+        <link rel="stylesheet" href="assets/css/theme.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css" rel="stylesheet" />
+
+        <!-- JS -->
+        <script src="https://kit.fontawesome.com/4ba02da364.js" crossorigin="anonymous"></script>
+        <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+        <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/libs/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/intlTelInput.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.js"></script>
+
+        <script src="assets/js/theme.min.js"></script>
+        <script src="assets/js/js_index.js"></script>
+
+    </head>
+
+    <body style="display: grid; grid-template-rows: 1fr auto; min-height: 100vh; margin: 0; "> 
+        <nav class="navbar navbar-expand-lg navbar-default position-sticky border-3 border-top border-primary bg-dark navbar-dark">
+            <!-- navigation start -->
+            <div class="container">
+                <a class="navbar-brand @@brandLogo" href="index.html"><img src="assets/images/Logo_beta_branco.png" alt="" style="zoom:10%"></a>
+                 <!-- <a class="navbar-brand @@brandLogo" href="index.html"><img src="assets/images/logo_atmos_branco.png" alt="" style="zoom:40%"></a>-->
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="icon-bar top-bar mt-0"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar-default">
+                    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <ul class="navbar-nav ms-auto me-lg-3 ">
+                        <li class="nav-item dropdown disabled">
+                            <a class="nav-link d-lg-none" href="#">
+                                Menu
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown dropstart">
+                            <a class="nav-link " href="#" id="menu-7" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Docs
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-arrow  dropdown-menu-md  " aria-labelledby="menu-7">
+                                <li>
+                                    <a class="dropdown-list-group-item" href="http://127.0.0.1:5000/openapi/swagger" target="_blank">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-3">
+                                                <i class="bi bi-file-text-fill font-24"></i>
+                                            </span>
+                                            <div>
+                                                <h5 class="mb-0">Documentação API App</h5>
+                                                <span class="font-12 text-muted">Principais funções do sistema e faz conexão com o banco de bados.</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-list-group-item" href="http://127.0.0.1:5001/openapi/swagger" target="_blank">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-3">
+                                                <i class="bi bi-file-text-fill font-24"></i>
+                                            </span>
+                                            <div>
+                                                <h5 class="mb-0">Documentação API AML</h5>
+                                                <span class="font-12 text-muted">Relaliza diligência de compliance.</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-list-group-item" href="" target="_blank">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-3">
+                                                <i class="bi bi-file-text-fill font-24"></i>
+                                            </span>
+                                            <div>
+                                                <h5 class="mb-0">Diagrama</h5>
+                                                <span class="font-12 text-muted">Diagrama de estrutura do sistema</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <hr>
+                                <li>
+                                    <div class="dropdown-list-group-item" href="" >
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-3"> <i class="bi bi-layers-fill font-24"></i>
+                                            </span>
+                                            <div>
+                                                <h5 class="mb-0">Chaves e Variáveis</h5>
+                                                <span class="font-12 text-muted">Ready to use list of components</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="mb-3 col-12" style="padding:0px 20px;">
+                                        <label class="form-label"><span class="font-12 text-muted">Chave API AML:</span></label>
+                                        <input type="text" class="form-control chave_aml">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="mb-3 col-12" style="padding:0px 20px;">
+                                        <label class="form-label"><span class="font-12 text-muted">Chave API CountryStateCity:</span></label>
+                                        <input type="text" class="form-control" >
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="mb-3 col-12" style="padding:0px 20px;">
+                                        <label class="form-label"><span class="font-12 text-muted">Email Gestora:</span></label>
+                                        <input type="text" class="form-control email_aml"  >
+                                    </div>
+                                </li>
+                               
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="header-btn ">
+                        <a class="btn btn-primary btn-sm btn_logout">Sign out</a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- pageheader section -->
+        <div class="bg-shape bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                        <div class="pt-lg-2 pb-lg-12 pt-5 pb-0 mb-12 "></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- dashboard nav -->
+        <div class="pb-4 mt-lg-n18 mt-n10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-12">
+                        <nav class="navbar navbar-expand-md navbar-light dashboard-nav mb-3 mb-lg-0 shadow-sm">
+                            <a class="d-xl-none d-lg-none d-md-none text-inherit  fw-bold" href="#">Menu</a>
+                            <button class="navbar-toggler d-md-none icon-shape icon-sm rounded bg-primary text-light"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="fas fa-bars"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <div class="navbar-nav flex-column w-100 ">
+                                    <div class="border-bottom py-4 p-md-4 d-flex justify-content-between text-reset">
+                                        <div class="d-flex align-items-center">
+                                            <img src="assets/images/avatar-1.png" alt="avatar"
+                                                class="rounded-circle avatar-lg">
+                                            <div class="ms-3 lh-1">
+                                                <h5 class="mb-1 resumo_cotista"></h5>
+                                                <span class="titulo_resumo_status">Status: <span class="resumo_status" style="display: none;"></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="py-4 p-md-4">
+                                        <span class="heading ">Cadastro</span>
+                                        <ul class="list-unstyled mb-4 mt-2">
+                                            <li class="nav-item active">
+                                                <a class="nav-link" href="" data-div_scroll="card_ficha_cadastral">Ficha Cadastral</a>
+                                            </li>
+                                            <li class="nav-item ">
+                                                <a class="nav-link" href="" data-div_scroll="card_diq">Declaração de IQ</a>
+                                            </li>
+                                            <li class="nav-item ">
+                                                <a class="nav-link" href="" data-div_scroll="card_perfil_risco">Perfil de Risco</a>
+                                            </li>
+                                            <!-- <li class="nav-item ">
+                                                <a class="nav-link" href="" data-div_scroll="card_documentos_pessoais">Documentos Pessoais</a>
+                                            </li> -->
+                                        </ul>
+                                        <span class="heading border-top pt-4 d-block">Mais Informações</span>
+
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="nav-item ">
+                                                <a class="nav-link" href="" data-div_scroll="card_historico">Histórico </a>
+                                                <a class="nav-link" href="" data-div_scroll="card_delete">Deletar Cadastro</a>
+                                                <a class="nav-link" href="" data-div_scroll="card_contato">Contato</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <!-- dashboard nav -->
+                    <div class="col-lg-9 col-md-8 col-12 div_principal" style=" overflow-y: scroll; height: 80vh;">
+                        <!-- card status -->
+                        <div class="card rounded-3 mb-4 shadow-sm card_status">
+                            <!-- card header -->
+                            <div class="card-header bg-white p-4">
+                                <h3 class="mb-0 h4">Status
+                                    <div class="spinner-border spinner-border-sm text-primary spinner_status" role="status" style="display: none;">
+                                        <span class="sr-only"></span>
+                                    </div>
+                                </h3>
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body p-4 status_cadastro status_cadastro_inicializado" style="display: none;">
+                                <p class="mb-0 font-14">
+                                    <b>Cadastro inicializado: </b>Cadastro em atualização. Por favor, preencha todos os campos obrigatórios para que o cadastro seja enviado para aprovação.
+                                </p>
+                                <!-- collapse one -->
+                                <ul class="list-group list-group-flush" id="accordionLocation">
+                                    <li class="list-group-item px-0 py-3 mt-3 ">
+                                        <div class="d-flex">
+                                            <div class="me-2 mt-2">
+                                                <div class="status bg-ficha_cadastral bg-danger"></div>
+                                            </div>
+                                            <div class="d-md-flex  justify-content-between w-100">
+                                                <div class="d-flex">
+                                                    <i class="fe fe-airplay font-32"></i>
+                                                    <div class="ms-3">
+                                                        <h5 class="mb-0">Ficha Cadastral</h5>
+                                                        <small><span class="porcentagem_ficha_cadastral" ></span>% preenchida</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span class="mt-3 mt-md-0 btn btn-light btn-sm btn_status_scroll" href="" data-div_scroll="card_ficha_cadastral">
+                                                    <span class="btn_status_ficha_cadastral">Incompleto</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- collapse two -->
+                                    <li class="list-group-item px-0 py-3 ">
+                                        <div class="d-flex">
+                                            <div class="me-2 mt-2">
+                                                <div class="status bg-diq bg-danger"></div>
+                                            </div>
+                                            <div class="d-md-flex  justify-content-between w-100">
+                                                <div class="d-flex">
+                                                    <i class="fe fe-smartphone font-32"></i>
+                                                    <div class="ms-3">
+                                                        <h5 class="mb-0">Declaração de Investidor Qualificado</h5>
+                                                        <small><span class="porcentagem_diq" ></span>% preenchida</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <span class="mt-3 mt-md-0 btn btn-light btn-sm btn_status_scroll" href="" data-div_scroll="card_diq">
+                                                    <span class="btn_status_diq">Incompleto</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- collapse three -->
+                                    <li class="list-group-item px-0 pt-3 pb-0 ">
+                                        <div class="d-flex">
+                                            <div class="me-2 mt-2">
+                                                <div class="status bg-perfil_risco bg-danger"></div>
+                                            </div>
+                                            <div class="d-md-flex  justify-content-between w-100">
+                                                <div class="d-flex">
+                                                    <i class="fe fe-tablet font-32"></i>
+                                                    <div class="ms-3">
+                                                        <h5 class="mb-0">Perfil de Risco</h5>
+                                                        <small><span class="porcentagem_perfil_risco" ></span>% preenchida</small>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span class="mt-3 mt-md-0 btn btn-light btn-sm btn_status_scroll" data-div_scroll="card_perfil_risco">
+                                                        <span class="btn_status_perfil_risco">Incompleto</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="bg-light p-4 rounded-3 div_cadastro_preenchido" style="margin-top:30px; display:none; ">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <div>
+                                            <span class="font-14 ms-0">A ficha cadastral foi devidamente preenchida. Após o envio, os dados submetidos serão analisados cuidadosamente tanto pela gestora quanto pelo administrador do fundo antes de receberem aprovação. Você deseja prosseguir e enviar o cadastro para análise e aprovação?</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <a href="#" class="btn btn-secondary btn-sm me-4 btn_enviar_cadastro">Enviar Cadastro</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- status: sem cadastro ou não atualizado -->
+                            <div class="card-body p-4 status_cadastro sem_cadastro" style="display: none;">
+                                <p class="mb-0 font-14">
+                                    <i class="fa-solid fa-triangle-exclamation fa-fw font-20 mb-2 text-center icon_status_sem_cadastro"></i>
+                                    <b>Sem cadastro ou cadastro se encontra desatualizado. </b>
+                                </p>
+                           
+                                <div class="bg-light p-4 rounded-3" style="margin-top: 15px;">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <div>
+                                            <span class="font-14 ms-0">Em cumprimento ao disposto na Resolução CVM nº 30/21 e Resolução CVM nº 50/21, seus cadastro precisa ser atualizado. Realize seu cadastro agora mesmo. Você não poderá investir enquanto seu cadastro não for aprovado.</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <a href="#" class="btn btn-secondary iniciar_cadatro btn-sm me-4">Iniciar Cadastro</a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- status vencido -->
+                            <div class="card-body p-4 status_cadastro cadastro_vencido" style="display: none;">
+                                <p class="mb-0 font-14">
+                                    <i class="fa-solid fa-triangle-exclamation fa-fw font-20 mb-2 text-center cadastro_vencido"></i>
+                                    <b>Cadastro vencido. Seus dados precisam ser atualizados. </b>
+                                </p>
+                           
+                                <div class="bg-light p-4 rounded-3" style="margin-top: 15px;">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <div>
+                                            <span class="font-14 ms-0">Em cumprimento ao disposto na Instrução nº 617, de 05 de dezembro de 2019, da Comissão de Valores Mobiliários, 
+                                                a ficha cadastral tem validade de 24 meses. Renove seus dados agora mesmo. Você não poderá mais investir enquanto não tiver feito a renovação.</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <a href="#" class="btn btn-secondary btn-sm me-4">Atualizar Cadastro</a>
+                                        </div>
+                                        <div class="font-13">
+                                            <span>Próximo vencimento:</span>
+                                            <span class="text-dark ms-2 fw-bold data_vencimento"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- status atualizado -->
+                            <div class="card-body p-4 status_cadastro cadastro_atualizado" style="display: none;">
+                                <p class="mb-0 font-14">
+                                    <i class="fa-solid fa-check fa-fw font-20 mb-2 text-center"></i>
+                                    <b>Cadastro atualizado.</b> Nenhuma ação necessaria. 
+                                </p>
+                           
+                                <div class="bg-light p-4 rounded-3" style="margin-top: 15px;">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <div>
+                                            <span class="font-14 ms-0">O cadastro possui uma validade de 24 (vinte e quatro) meses. Entretanto, se suas informações sofreram alterações,
+                                                 é possível realizar a atualização antes do término desse prazo. Idealmente, as atualizações devem ser efetuadas em até 15 dias após qualquer alteração.  </span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <a href="#" class="btn btn-secondary btn-sm me-4">Atualizar Cadastro</a>
+                                        </div>
+                                        <div class="font-13">
+                                            <span>Próximo vencimento:</span>
+                                            <span class="text-dark ms-2 fw-bold data_vencimento"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- status em analise -->
+                            <div class="card-body p-4 status_cadastro cadastro_em_aprovacao" style="display: none;">
+                                <p class="mb-0 font-14">
+                                    <i class="fa-solid fa-user-shield fa-fw font-20 mb-2 text-center cadastro_atualizado"></i>
+                                    <b>Cadastro enviado para aprovação.</b> Nenhuma ação necessaria. 
+                                </p>
+                           
+                                <div class="bg-light p-4 rounded-3" style="margin-top: 15px;">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <div>
+                                            <span class="font-14 ms-0">O seu cadastro foi submetido para aprovação e será analisado tanto pelo gestor quanto pelo administrador do fundo. Após a verificação dos dados 
+                                                e a aprovação no processo de diligência de compliance, você será notificado por e-mail. O prazo para essa análise é de até 3 dias úteis  </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- card FICHA CADASTRAL -->
+                        <div class="card rounded-3 mb-4 shadow-sm card_ficha_cadastral card_info_cadastro" style="display: none;">
+                            <!-- card header -->
+                            <div class="card-header bg-white p-4">
+                                <h3 class="mb-0 h4">Ficha Cadastral</h3>
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body p-4">
+                                <div class="d-md-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                                    <div class="col-7">
+                                        <h4 class="mb-1 h6">Progresso (<span class="porcentagem_ficha_cadastral"></span>%)
+                                            <span class="bnt_pendencias text-danger" style="cursor:pointer; zoom:75%; padding-left:15px; color:#f2c7c4;">Marcar campos pendentes</span>
+                                        </h4>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-success progress_ficha_cadastral" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-primary btn-sm btn_editar_cadatro" type="button">Editar Campos</button>
+                                        <button class="btn btn-light btn-sm" type="button" disabled="disabled">
+                                            <span class="btn_status_ficha_cadastral">Incompleto</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-12" style="margin-top:-10px;">
+                                    <label class="form-label">Tipo Conta<span class="text-danger">*</span></label>
+                                    <select class="form-select dados_cotista tipo_conta" data-id_atributo="61" data-tipo="select">
+                                        <option value="Individual">Individual</option>
+                                        <option value="Conjunta">Conjunta</option>
+                                    </select>
+                                </div>
+                                <hr>
+                                <!-- Titular -->
+                                <div>
+                                    <h4 style="color:#649599;">Titular</h4>
+                                    <div class="div_ficha_cadastral div_info" data-cotitular="0" >
+                                        <form class="row">
+                                            <div class="col-12 col-md-12">
+                                                <!-- Informações Gerais -->
+                                                <h5 class="mb-3">Informações Gerais</h5>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label class="form-label">Nome Completo<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control dados_cotista campo_obrigatorio nome_aml" required data-id_atributo="1" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label class="form-label">Nome Social (se houver)</label>
+                                                <input type="text" class="form-control dados_cotista" data-id_atributo="2" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label class="form-label" for="email">Situação Legal<span class="text-danger">*</span></label>
+                                                <div class="tab-content" id="pills-tabContent-radios-second">
+                                                    <div class="tab-pane tab-example-design fade active show campo_obrigatorio" data-id_atributo="3" data-tipo="radio" id="pills-radios-second-design" role="tabpanel" aria-labelledby="pills-radios-second-design-tab">
+                                                        <div class="form-check custom-radio form-check-inline">
+                                                            <input type="radio" name="atributo_3" class="form-check-input dados_cotista" data-id_atributo="3" data-tipo="radio" value="Maior">
+                                                            <label class="form-check-label" for="atributo_3">Maior</label>
+                                                        </div>
+                                                        <div class="form-check custom-radio form-check-inline">
+                                                            <input type="radio" id="emancipado" name="atributo_3" class="form-check-input dados_cotista" data-id_atributo="3" data-tipo="radio" value="Emancipado">
+                                                            <label class="form-check-label" for="atributo_3">Emancipado</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label class="form-label">Estado Civil<span class="text-danger">*</span></label>
+                                                <select class="form-select dados_cotista select_estadoCivil campo_obrigatorio" data-id_atributo="4" data-tipo="select">
+                                                    <option value=""></option>
+                                                    <option value="Solteiro">Solteiro</option>
+                                                    <option value="Divorciado">Divorciado</option>
+                                                    <option value="Casado">Casado</option>
+                                                    <option value="Viúvo">Viúvo</option>
+                                                    <option value="União Estável">União Estável</option>
+                                                    <option value="Separado Judicialmente">Separado Judicialmente</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_casado" style="display: none;">
+                                                <label class="form-label">Nome do Cônjuge ou Companheiro(a)<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control dados_cotista campo_obrigatorio" data-id_atributo="5" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_casado" style="display: none;">
+                                                <label class="form-label" for="lname">CPF do Cônjuge ou Companheiro(a)<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control dados_cotista campo_obrigatorio" data-id_atributo="6" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4 div_pais">
+                                                <label class="form-label" for="lname">Local de Nascimento - País<span class="text-danger">*</span></label>
+                                                <div class="spinner-border spinner-border-sm text-primary spinner_pais" role="status" style="display: none;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                                <select class="form-select dados_cotista campo_obrigatorio select_pais select_pais_nascimento" data-id_atributo="7" data-tipo="select"></select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4 div_estado">
+                                                <label class="form-label" for="lname">Estado<span class="text-danger">*</span></label>
+                                                <div class="spinner-border spinner-border-sm text-primary spinner_estado" role="status" style="display: none;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                                <select class="form-select dados_cotista campo_obrigatorio select_estado select_estado_nascimento" disabled data-id_atributo="8" data-tipo="select"></select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4 div_cidade">
+                                                <label class="form-label" for="lname">Cidade<span class="text-danger">*</span></label>
+                                                <div class="spinner-border spinner-border-sm text-primary spinner_cidade" role="status" style="display: none;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                                <select class="form-select dados_cotista campo_obrigatorio select_cidade" disabled data-id_atributo="9" data-tipo="select"></select>
+                                            </div>
+    
+                                            <!-- Relacionamento do Cliente com o Brasil e demais países  -->
+                                            <div class="col-12 col-md-12">
+                                                <h5 class="mb-3 mt-3">Relacionamento do Cliente com o Brasil e demais países ¹</h5>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_pais">
+                                                <label class="form-label">Nacionalidade<span class="text-danger">*</span></label>
+                                                <div class="spinner-border spinner-border-sm text-primary spinner_pais" role="status" style="display: none;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                                <select class="form-select dados_cotista campo_obrigatorio select_pais" data-id_atributo="10" data-tipo="select"></select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label class="form-label" for="lname">É cidadão(ã) de outros países além do declarado acima?<span class="text-danger">*</span></label>
+                                                <select class="form-select dados_cotista campo_obrigatorio outras_cidadanias" data-id_atributo="10" data-tipo="select">
+                                                    <option value=""></option>
+                                                    <option value="Não">Não</option>
+                                                    <option value="Sim">Sim</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_outras_cidadanias" style="display:none;">
+                                                <label class="form-label">Se sim, informar quais:<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control dados_cotista" data-id_atributo="12" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_outras_cidadanias" style="display:none;">
+                                                <label class="form-label">Se EUA/Território dos EUA, informar o Social Security Number</label>
+                                                <input type="text" class="form-control dados_cotista" data-id_atributo="13" data-tipo="input">
+                                            </div>
+                                            <label class="form-label">Preencher todos os países onde possui Domicílio Fiscal:<span class="text-danger">*</span></label>
+                                            <div class="mb-3 col-12 col-md-4 div_pais">
+                                                <label class="form-label">País de Domicílio Fiscal 1</label>
+                                                <div class="spinner-border spinner-border-sm text-primary spinner_pais" role="status" style="display: none;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                                <select class="form-select dados_cotista campo_obrigatorio select_pais" data-id_atributo="14" data-tipo="select"></select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4">
+                                                <label class="form-label">CPF ou N° de Identif. Fiscal (NIF)</label>
+                                                <input type="text" class="form-control dados_cotista campo_obrigatorio cpf_aml" required data-id_atributo="15" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4">
+                                                <label class="form-label">Caso não possua NIF, escolher motivo:</label>
+                                                <select class="form-select dados_cotista campo_obrigatorio" data-id_atributo="16" data-tipo="select">
+                                                    <option value=""></option>
+                                                    <option value="Não Exige">Não Exige</option>
+                                                    <option value="Pendente">Pendente</option>
+                                                    <option value="Isento">Isento</option>
+                                                </select>
+                                            </div>
+                                            <p class="div_btn_DomicílioFiscal1" align="right" style="margin:0px; font-size:12px; cursor:pointer;"><a class="btn_DomicílioFiscal2" href="" style="color:#6AA1A6;">+ Adicionar Domicílio Fical</a></p>
+                                            <div class="mb-3 col-12 col-md-4 div_DomicílioFiscal2 div_pais" style="display:none;">
+                                                <label class="form-label">País de Domicílio Fiscal 2</label>
+                                                <div class="spinner-border spinner-border-sm text-primary spinner_pais" role="status" style="display: none;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                                <select class="form-select dados_cotista campo_obrigatorio select_pais" data-id_atributo="17" data-tipo="select"></select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4 div_DomicílioFiscal2" style="display:none;">
+                                                <label class="form-label">CPF ou N° de Identif. Fiscal (NIF)</label>
+                                                <input type="text" class="form-control dados_cotista atributo_18" data-id_atributo="18" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4 div_DomicílioFiscal2" style="display:none;">
+                                                <label class="form-label">Caso não possua NIF, escolher motivo:</label>
+                                                <select class="form-select dados_cotista campo_obrigatorio atributo_19" data-id_atributo="19" data-tipo="select">
+                                                    <option value="Não Exige" selected="selected">Não Exige</option>
+                                                    <option value="Pendente">Pendente</option>
+                                                    <option value="Isento">Isento</option>
+                                                </select>
+                                            </div>
+                                            <p class="div_btn_DomicílioFiscal2" align="right" style="margin:0px; font-size:12px; color:#6AA1A6; cursor:pointer; display:none;"><a class="excluir_addDomicílioFiscal2" href="" style="padding-right:10px; color:#6AA1A6;">- Excluir Domicílio Fical</a><a class="btn_addDomicílioFiscal3" href="" style="color:#6AA1A6;">+ Adicionar Domicílio Fical</a></p>
+                                            <div class="mb-3 col-12 col-md-4 div_DomicílioFiscal3 div_pais" style="display:none;">
+                                                <label class="form-label">País de Domicílio Fiscal 3</label>
+                                                <div class="spinner-border spinner-border-sm text-primary spinner_pais" role="status" style="display: none;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                                <select class="form-select dados_cotista campo_obrigatorio select_pais" data-id_atributo="20" data-tipo="select"></select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4 div_DomicílioFiscal3" style="display:none;">
+                                                <label class="form-label">CPF ou N° de Identif. Fiscal (NIF)</label>
+                                                <input type="text" class="form-control dados_cotista atributo_21" data-id_atributo="21" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4 div_DomicílioFiscal3" style="display:none;">
+                                                <label class="form-label">Caso não possua NIF, escolher motivo:</label>
+                                                <select class="form-select dados_cotista atributo_22" data-id_atributo="22" data-tipo="select">
+                                                    <option value="Não Exige" selected="selected">Não Exige</option>
+                                                    <option value="Pendente">Pendente</option>
+                                                    <option value="Isento">Isento</option>
+                                                </select>
+                                            </div>
+                                            <p class="div_btn_DomicílioFiscal3" align="right" style="margin:0px; font-size:12px; color:#6AA1A6; cursor:pointer; display:none;"><a class="excluir_DomicílioFiscal3" href="" style="color:#6AA1A6;">- Excluir Domicílio Fical</a></p>
+                                            <div class="mb-3 col-12 col-md-12">
+                                                <p style="font-size:14px; margin-bottom:0px;">Motivos de dispensa de apresentação de NIF:</p>
+                                                <li style="font-size:14px;"><b>Não Exige: </b>O país/jurisdição onde o cliente é residente não emite NIFs para seus residentes;</li>
+                                                <li style="font-size:14px;"><b>Pendente: </b>O cliente aguarda a obtenção de um NIF ou número equivalente, <b>o qual se compromente a entregar tão logo o receba</b>;</li>
+                                                <li style="font-size:14px;"><b>Isento: </b>Apesar do país/jurisdição emitir NIFs para seus residentes, um NIF não é necessério excepcionalmente (somente selecione esse motivo caso a lei doméstica da jurisdição referente não exija a coleta do NIF emitido por tal jurisdição);</li>
+                                                
+                                                <p style="font-size:14px; margin-top:10px;">Caso tenha informado <u>EUA ou Territ;orios dos Estados Unidos da América, favor apresentar também o Wform em nome do cliente. </u></p>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-12">
+                                                <p style="font-size:11px;">¹ Para cumprimento das regras implantadas pela Organização para a Coorperação e Desenvolvimento Econômino - OCDE (Denominada Common Reporting Standard) e pelo FATCA (Foreign Account Tax Compliance Act), regulamentadas no Brasil pela Instução Normativa da Receita Federal do Brasil n°1.571 de 2015, com alterações posteriores.</p>
+                                            </div>
+    
+                                            <!-- Endereçoes  -->
+                                            <div class="col-12 col-md-12">
+                                                <h5 class="mb-3 mt-3">Endereços</h5>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-12 div_email">
+                                                <label class="form-label">Email
+                                                    <span class="text-danger">*</span>
+                                                    <span class="email_validado_api" style="display: none;"><i class="fa-solid fa-shield-halved fa-fw" style="color:#308930;"></i></span>
+                                                    <span class="email_alerta_api" style="display: none;"><i class="fa-solid fa-shield-virus fa-fw" style="color:#9b0c0c; "></i></span>
+                                                    <span class="spinner-border spinner-border-sm text-primary spinner_check_email" style="display:none;"></span>
+                                                </label>
+                                                <input type="text" class="form-control dados_cotista verifica_email campo_obrigatorio" data-id_atributo="23" data-tipo="input" required>
+                                                <div class="erro_email invalid-feedback" style="display: none;"><span class="text_msg">O e-mail não é válido.</span></div>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label class="form-label">Telefone</label>
+                                                <input type="tel" class="form-control dados_cotista campo_telefone" data-id_atributo="24" data-tipo="input_telefone" >
+                                            </div>
+                                            <div class="mb-4 col-12 col-md-6">
+                                                <label class="form-label">Celular<span class="text-danger">*</span></label>
+                                                <input type="tel" class="form-control dados_cotista campo_telefone campo_obrigatorio" data-id_atributo="25" data-tipo="input_telefone" required>
+                                            </div>
+                                            
+                                            <label class="form-label"><b>Endereço Residencial<span class="text-danger">*</span></b></label>
+                                            <div class="div_end div_end_geral row" data-endereco="principal" style="padding:0px; margin:0px;">
+                                                <div class="mb-3 col-12 col-lg-12">
+                                                    <label class="form-label">Localização do Endereço:</label>
+                                                    <select class="form-select campo_obrigatorio dados_cotista localizacao_end">
+                                                        <option value="BR">No Brasil</option>
+                                                        <option value="fora">Fora do Brasil</option>
+                                                    </select>
+                                                </div>
+                                                <div class="end_localizado_br row" style="padding:0px; margin:0px;">
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">CEP<span class="text-danger">*</span></label>
+                                                        <div class="spinner-border spinner-border-sm text-primary spinner_cep" role="status" style="display: none;">
+                                                            <span class="sr-only"></span>
+                                                        </div>
+                                                        <input type="text" class="form-control dados_cotista campo_cep" data-id_atributo="26" data-tipo="input" required>
+                                                        <div class="erro_cep invalid-feedback" style="display: none;"><span class="text_msg">CEP informado é válido.</span></div>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-8">
+                                                        <label class="form-label">Rua/Av.</label>
+                                                        <input type="text" class="form-control dados_cotista end_rua campo_cep_block" data-id_atributo="29" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">Número<span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control dados_cotista campo_obrigatorio end_num" data-id_atributo="28" data-tipo="input" required>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">Complemento</label>
+                                                        <input type="text" class="form-control dados_cotista end_complemento" data-id_atributo="27" data-tipo="input">
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">Bairro</label>
+                                                        <input type="text" class="form-control dados_cotista end_bairro campo_cep_block" data-id_atributo="33" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">UF</label>
+                                                        <input type="text" class="form-control dados_cotista end_uf campo_cep_block" data-id_atributo="31" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-4 col-12 col-md-4">
+                                                        <label class="form-label">Cidade</label>
+                                                        <input type="text" class="form-control dados_cotista end_cidade campo_cep_block" data-id_atributo="30" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">País</label>
+                                                        <input type="text" class="form-control dados_cotista end_pais campo_cep_block" data-id_atributo="32" data-tipo="input" val="Brasil" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="end_localizado_fora row" style="display: none; padding:0px; margin:0px;">
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">CEP/Código Postal<span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control dados_cotista campo_cod_postal campo_obrigatorio" data-id_atributo="26" data-tipo="input" required>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-8">
+                                                        <label class="form-label">Rua/Av.</label>
+                                                        <input type="text" class="form-control dados_cotista end_rua" data-id_atributo="29" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">Número<span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control dados_cotista campo_obrigatorio end_num" data-id_atributo="28" data-tipo="input" required>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">Complemento</label>
+                                                        <input type="text" class="form-control dados_cotista end_complemento" data-id_atributo="27" data-tipo="input">
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">Bairro</label>
+                                                        <input type="text" class="form-control dados_cotista campo_obrigatorio end_bairro" data-id_atributo="33" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">UF<span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control dados_cotista end_uf" data-id_atributo="31" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-4 col-12 col-md-4">
+                                                        <label class="form-label">Cidade<span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control dados_cotista campo_obrigatorio end_cidade" data-id_atributo="30" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">País<span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control dados_cotista campo_obrigatorio end_pais" data-id_atributo="32" data-tipo="input" disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p align="right" style="margin:0px; font-size:12px; cursor:pointer;"><a class="btn_outro_endereco" href="" style="color:#6AA1A6;">+ Adicionar outro endereço</a></p>
+                                            <div class="div_outro_endereco" style="padding: 0px; margin: 0xp; display: none;">
+                                                <label class="form-label" style="padding-left:15px;"><b>Outro Endereço</b></label>
+                                                <div class="div_end_2 div_end_geral row"  data-endereco="outro" style="padding:0px; margin:0px;">
+                                                    <div class="mb-3 col-12 col-lg-12">
+                                                        <label class="form-label">Localização do Endereço:</label>
+                                                        <select class="form-select campo_obrigatorio dados_cotista localizacao_end">
+                                                            <option value="BR">No Brasil</option>
+                                                            <option value="fora">Fora do Brasil</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="end_localizado_br row" style="padding:0px; margin:0px;">
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">CEP<span class="text-danger">*</span></label>
+                                                            <div class="spinner-border spinner-border-sm text-primary spinner_cep" role="status" style="display: none;">
+                                                                <span class="sr-only"></span>
+                                                            </div>
+                                                            <input type="text" class="form-control dados_cotista campo_cep" data-id_atributo="34" data-tipo="input" required>
+                                                            <div class="erro_cep invalid-feedback" style="display: none;"><span class="text_msg">CEP informado é válido.</span></div>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-8">
+                                                            <label class="form-label">Rua/Av.</label>
+                                                            <input type="text" class="form-control dados_cotista end_rua campo_cep_block" data-id_atributo="37" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">Número<span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control dados_cotista campo_obrigatorio end_num" data-id_atributo="36" data-tipo="input" required>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">Complemento</label>
+                                                            <input type="text" class="form-control dados_cotista end_complemento" data-id_atributo="35" data-tipo="input">
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">Bairro</label>
+                                                            <input type="text" class="form-control dados_cotista end_bairro campo_cep_block" data-id_atributo="41" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">UF</label>
+                                                            <input type="text" class="form-control dados_cotista end_uf campo_cep_block" data-id_atributo="39" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-4 col-12 col-md-4">
+                                                            <label class="form-label">Cidade</label>
+                                                            <input type="text" class="form-control dados_cotista end_cidade campo_cep_block" data-id_atributo="38" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">País</label>
+                                                            <input type="text" class="form-control dados_cotista end_pais campo_cep_block" data-id_atributo="40" data-tipo="input" val="Brasil" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="end_localizado_fora row" style="display: none; padding:0px; margin:0px;">
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">CEP/Código Postal<span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control dados_cotista campo_cod_postal campo_obrigatorio" data-id_atributo="34" data-tipo="input" required>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-8">
+                                                            <label class="form-label">Rua/Av.<span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control dados_cotista end_rua campo_obrigatorio" data-id_atributo="37" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">Número<span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control dados_cotista campo_obrigatorio end_num" data-id_atributo="36" data-tipo="input" required>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">Complemento</label>
+                                                            <input type="text" class="form-control dados_cotista end_complemento" data-id_atributo="35" data-tipo="input">
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">Bairro</label>
+                                                            <input type="text" class="form-control dados_cotista campo_obrigatorio end_bairro" data-id_atributo="41" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">UF<span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control dados_cotista end_uf campo_obrigatorio" data-id_atributo="39" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-4 col-12 col-md-4">
+                                                            <label class="form-label">Cidade<span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control dados_cotista campo_obrigatorio end_cidade" data-id_atributo="38" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">País<span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control dados_cotista campo_obrigatorio end_pais" data-id_atributo="40" data-tipo="input" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p align="right" style="margin:0px; font-size:12px; cursor:pointer;"><a class="btn_excluir_outro_endereco" href="" style="color:#6AA1A6;">+ Excluir endereço</a></p>
+                                            </div>
+    
+                                            <!-- Dados Profissionais  -->
+                                            <div class="col-12 col-md-12">
+                                                <h5 class="mb-3 mt-3">Dados Profissionais</h5>
+                                            </div>
+                                            <label class="form-label"><b>Cliente</b></label>
+                                            <div class="mb-3 col-12 col-md-12">
+                                                <div class="form-check custom-checkbox">
+                                                    <input type="checkbox" class="form-check-input dados_cotista checkbox_OcupacaoProfissional" data-id_atributo="42" data-tipo="checkbox" id="customCheck1">
+                                                    <label class="form-check-label" for="customCheck1" style="font-size:0.875rem;">É dependente</label>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_OcupacaoProfissional">
+                                                <label class="form-label">Ocupação Profissional<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control dados_cotista campo_obrigatorio" data-id_atributo="43" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_OcupacaoProfissional">
+                                                <label class="form-label">Cargo(se Funcionário Público)</label>
+                                                <input type="text" class="form-control dados_cotista" data-id_atributo="44" data-tipo="input">
+                                            </div>
+                                            
+                                            <label class="form-label div_ResponsavelFinanceiro" style="display: none;"><b>Responsável Financeiro</b></label>
+                                            <div class="mb-3 col-12 col-md-12 div_ResponsavelFinanceiro" style="display: none;">
+                                                <p style="font-size:14px; margin-bottom:0px;">Preenchimento obrigatório, caso tenha se declarado como dependente.</p>
+                                            </div>  
+                                            <div class="mb-3 col-12 col-md-6 div_ResponsavelFinanceiro" style="display: none;">
+                                                <label class="form-label">CPF<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control dados_cotista campo_obrigatorio" data-id_atributo="45" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_ResponsavelFinanceiro" style="display: none;">
+                                                <label class="form-label">Ocupação Profissional<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control dados_cotista campo_obrigatorio" data-id_atributo="46" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_ResponsavelFinanceiro" style="display: none;">
+                                                <label class="form-label">Cargo(se Funcionário Público)</label>
+                                                <input type="text" class="form-control dados_cotista" data-id_atributo="47" data-tipo="input">
+                                            </div>
+                                            
+    
+                                            <!-- Situação Financeira e Patrimonial Estimada  -->
+                                            <div class="col-12 col-md-12">
+                                                <h5 class="mb-3 mt-3">Situação Financeira e Patrimonial Estimada</h5>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-12">
+                                                <p style="font-size:14px; margin-bottom:0px;">Preencha sua renda total anual e os valores do seu patrimônio estimado em cada categoria, ou com os dados do Responsável Financeiro, caso tenha se declarado como dependente.</p>
+                                            </div>                         
+                                            <div class="mb-3 col-12 col-md-8">    
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Renda Total Anual (R$)<span class="text-danger">*</span>:</span>
+                                                    </div>
+                                                    <input type="text" class="form-control dados_cotista campo_obrigatorio formato_numero" data-id_atributo="48" data-tipo="input">
+                                                </div>
+                                            </div> 
+    
+                                            <label class="form-label"><b>Patrimonio</b></label>
+                                            <div class="mb-3 col-12 col-md-8">    
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="width:400px;">Bens móvies (carros, eletrodomésticos, etc.)<span class="text-danger">*</span>  R$:</span>
+                                                    </div>
+                                                    <input type="text" class="form-control dados_cotista campo_obrigatorio formato_numero" data-id_atributo="49" data-tipo="input">
+                                                </div>
+                                            </div> 
+                                            <div class="mb-3 col-12 col-md-8">    
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"  style="width:400px;">Bens imóvies (apartamentos, casas, etc.)<span class="text-danger">*</span>  R$:</span>
+                                                    </div>
+                                                    <input type="text" class="form-control dados_cotista campo_obrigatorio formato_numero" data-id_atributo="50" data-tipo="input">
+                                                </div>
+                                            </div> 
+                                            <div class="mb-3 col-12 col-md-8">    
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"  style="width:400px;">Investimentos (renda fixa, fundos, etc.)<span class="text-danger">*</span>  R$:</span>
+                                                    </div>
+                                                    <input type="text" class="form-control dados_cotista campo_obrigatorio formato_numero" data-id_atributo="51" data-tipo="input">
+                                                </div>
+                                            </div> 
+                                            <div class="mb-3 col-12 col-md-8">    
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"  style="width:400px;">Previdência Privada<span class="text-danger">*</span>  R$:</span>
+                                                    </div>
+                                                    <input type="text" class="form-control dados_cotista campo_obrigatorio formato_numero" data-id_atributo="52" data-tipo="input">
+                                                </div>
+                                            </div> 
+                                            <div class="mb-3 col-12 col-md-8">    
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"  style="width:400px;">Outros (saldo em conta corrente, etc.)<span class="text-danger">*</span>  R$:</span>
+                                                    </div>
+                                                    <input type="text" class="form-control dados_cotista campo_obrigatorio formato_numero" data-id_atributo="53" data-tipo="input">
+                                                </div>
+                                            </div> 
+    
+                                                <!-- Clientes estrangeiros ao Brasil  -->
+                                                <div class="col-12 col-md-12">
+                                                <h5 class="mb-3 mt-3"> Clientes estrangeiros ao Brasil</h5>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-12">
+                                                <div class="form-check custom-checkbox">
+                                                    <input type="checkbox" class="form-check-input dados_cotista checkbox_NaoResidentes" data-id_atributo="54" data-tipo="checkbox" id="customCheck1">
+                                                    <label class="form-check-label" for="customCheck1" style="font-size:0.875rem;">É um Investidores Não Residentes</label>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-12 div_NaoResidentes" style="display: none;">
+                                                <p style="font-size:14px; margin-bottom:0px;">Clientes considerados Investidores Não Residentes no Brasil, informar:</p>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_NaoResidentes" style="display: none;">
+                                                <div class="form-check custom-checkbox">
+                                                    <input type="checkbox" class="form-check-input dados_cotista" data-id_atributo="55" data-tipo="checkbox">
+                                                    <label class="form-check-label" for="customCheck1" style="font-size:0.875rem;">Conta de Domiciliado no Exterior - CDE - Informar seu CPF:</label>
+                                                    <input type="text" class="form-control dados_cotista" data-id_atributo="58" data-tipo="input">
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_NaoResidentes" style="display: none;">
+                                                <div class="form-check custom-checkbox">
+                                                    <input type="checkbox" class="form-check-input dados_cotista" data-id_atributo="56" data-tipo="checkbox">
+                                                    <label class="form-check-label" for="customCheck1" style="font-size:0.875rem;">Investidor não Residente - Lei 4131 - Informar seu CPF:</label>
+                                                    <input type="text" class="form-control dados_cotista" data-id_atributo="59" data-tipo="input">
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-12 div_NaoResidentes" style="display: none;">
+                                                <div class="form-check custom-checkbox">
+                                                    <input type="checkbox" class="form-check-input dados_cotista" data-id_atributo="57" data-tipo="checkbox">
+                                                    <label class="form-check-label" for="customCheck1" style="font-size:0.875rem;">Investidor não Residente - Resolução 4373/14 - Seguir com o preenchimento do Anexo 4373 Pessoa Física</label>
+                                                </div>
+                                            </div>
+    
+                                            <!-- Declaração  -->
+                                            <div class="col-12 col-md-12">
+                                                <h5 class="mb-3 mt-3"> Declaração</h5>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-12">
+                                                <label class="form-check-label" for="customCheck1" style="font-size:0.875rem; text-align: justify;"> <input type="checkbox" class="form-check-input dados_cotista campo_obrigatorio" data-id_atributo="60" data-tipo="checkbox">   Declaro para todos os fins legais e sob pena de falsidade ideológica serem verdadeiras, válidas, corretas e completas as 
+                                                    informações fornecidas para o preenchimento de todas as fichas cadastrais (“Kit Cadastral”) da Atmos Capital Gestão de Recursos Ltda (doravante designados “Atmos Capital”) 
+                                                    e Banco BTG Pactual S.A. e demais empresas do conglomerado financeiro (doravante designados “BTG Pactual”), inclusive os números de inscrição para fins fiscais bem como os 
+                                                    dados e declarações anexos, devendo quaisquer alterações que vierem a ocorrer nos meus dados cadastrais serem por mim informadas no prazo máximo de dez dias, devendo prover 
+                                                    toda a documentação suporte que se faça necessária. Até que seja prestada essa informação de alteração de dados, declaro concordar com quaisquer atos ou eventos que venham 
+                                                    a ocorrer para os quais a Atmos Capital e o BTG Pactual leve em consideração os dados cadastrais ora informados. Declaro ainda, que atualizarei minhas informações sempre 
+                                                    que requerido, na forma e prazo informados pelo Distribuidor.</label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <!-- Cotitular -->
+                                <div class="div_cotitular" style="display: none;">
+                                    <h4 style="color:#649599;">Cotitular</h4>
+                                    <div class="div_info div_ficha_cadastral_cotitular" data-cotitular="1">
+                                        <form class="row">
+                                            <div class="col-12 col-md-12">
+                                                <!-- Informações Gerais -->
+                                                <h5 class="mb-3">Informações Gerais</h5>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label class="form-label">Nome Completo<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control dados_cotista campo_obrigatorio nome_aml" required data-id_atributo="1" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label class="form-label">Nome Social (se houver)</label>
+                                                <input type="text" class="form-control dados_cotista" data-id_atributo="2" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label class="form-label" for="email">Situação Legal<span class="text-danger">*</span></label>
+                                                <div class="tab-content" id="pills-tabContent-radios-second">
+                                                    <div class="tab-pane tab-example-design fade active show campo_obrigatorio" data-id_atributo="3" data-tipo="radio" id="pills-radios-second-design" role="tabpanel" aria-labelledby="pills-radios-second-design-tab">
+                                                        <div class="form-check custom-radio form-check-inline">
+                                                            <input type="radio" name="atributo_3" class="form-check-input dados_cotista" data-id_atributo="3" data-tipo="radio" value="Maior">
+                                                            <label class="form-check-label" for="atributo_3">Maior</label>
+                                                        </div>
+                                                        <div class="form-check custom-radio form-check-inline">
+                                                            <input type="radio" id="emancipado" name="atributo_3" class="form-check-input dados_cotista" data-id_atributo="3" data-tipo="radio" value="Emancipado">
+                                                            <label class="form-check-label" for="atributo_3">Emancipado</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label class="form-label">Estado Civil<span class="text-danger">*</span></label>
+                                                <select class="form-select dados_cotista select_estadoCivil campo_obrigatorio" data-id_atributo="4" data-tipo="select">
+                                                    <option value=""></option>
+                                                    <option value="Solteiro">Solteiro</option>
+                                                    <option value="Divorciado">Divorciado</option>
+                                                    <option value="Casado">Casado</option>
+                                                    <option value="Viúvo">Viúvo</option>
+                                                    <option value="União Estável">União Estável</option>
+                                                    <option value="Separado Judicialmente">Separado Judicialmente</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_casado" style="display: none;">
+                                                <label class="form-label">Nome do Cônjuge ou Companheiro(a)<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control dados_cotista campo_obrigatorio" data-id_atributo="5" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_casado" style="display: none;">
+                                                <label class="form-label" for="lname">CPF do Cônjuge ou Companheiro(a)<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control dados_cotista campo_obrigatorio" data-id_atributo="6" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4 div_pais">
+                                                <label class="form-label" for="lname">Local de Nascimento - País<span class="text-danger">*</span></label>
+                                                <div class="spinner-border spinner-border-sm text-primary spinner_pais" role="status" style="display: none;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                                <select class="form-select dados_cotista campo_obrigatorio select_pais select_pais_nascimento" data-id_atributo="7" data-tipo="select"></select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4 div_estado">
+                                                <label class="form-label" for="lname">Estado<span class="text-danger">*</span></label>
+                                                <div class="spinner-border spinner-border-sm text-primary spinner_estado" role="status" style="display: none;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                                <select class="form-select dados_cotista campo_obrigatorio select_estado select_estado_nascimento" disabled data-id_atributo="8" data-tipo="select"></select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4 div_cidade">
+                                                <label class="form-label" for="lname">Cidade<span class="text-danger">*</span></label>
+                                                <div class="spinner-border spinner-border-sm text-primary spinner_cidade" role="status" style="display: none;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                                <select class="form-select dados_cotista campo_obrigatorio select_cidade" disabled data-id_atributo="9" data-tipo="select"></select>
+                                            </div>
+    
+                                            <!-- Relacionamento do Cliente com o Brasil e demais países  -->
+                                            <div class="col-12 col-md-12">
+                                                <h5 class="mb-3 mt-3">Relacionamento do Cliente com o Brasil e demais países ¹</h5>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_pais">
+                                                <label class="form-label">Nacionalidade<span class="text-danger">*</span></label>
+                                                <div class="spinner-border spinner-border-sm text-primary spinner_pais" role="status" style="display: none;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                                <select class="form-select dados_cotista campo_obrigatorio select_pais" data-id_atributo="10" data-tipo="select"></select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label class="form-label" for="lname">É cidadão(ã) de outros países além do declarado acima?<span class="text-danger">*</span></label>
+                                                <select class="form-select dados_cotista campo_obrigatorio outras_cidadanias" data-id_atributo="10" data-tipo="select">
+                                                    <option value=""></option>
+                                                    <option value="Não">Não</option>
+                                                    <option value="Sim">Sim</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_outras_cidadanias" style="display:none;">
+                                                <label class="form-label">Se sim, informar quais:<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control dados_cotista" data-id_atributo="12" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_outras_cidadanias" style="display:none;">
+                                                <label class="form-label">Se EUA/Território dos EUA, informar o Social Security Number</label>
+                                                <input type="text" class="form-control dados_cotista" data-id_atributo="13" data-tipo="input">
+                                            </div>
+                                            <label class="form-label">Preencher todos os países onde possui Domicílio Fiscal:<span class="text-danger">*</span></label>
+                                            <div class="mb-3 col-12 col-md-4 div_pais">
+                                                <label class="form-label">País de Domicílio Fiscal 1</label>
+                                                <div class="spinner-border spinner-border-sm text-primary spinner_pais" role="status" style="display: none;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                                <select class="form-select dados_cotista campo_obrigatorio select_pais" data-id_atributo="14" data-tipo="select"></select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4">
+                                                <label class="form-label">CPF ou N° de Identif. Fiscal (NIF)</label>
+                                                <input type="text" class="form-control dados_cotista campo_obrigatorio cpf_aml" required data-id_atributo="15" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4">
+                                                <label class="form-label">Caso não possua NIF, escolher motivo:</label>
+                                                <select class="form-select dados_cotista campo_obrigatorio" data-id_atributo="16" data-tipo="select">
+                                                    <option value=""></option>
+                                                    <option value="Não Exige">Não Exige</option>
+                                                    <option value="Pendente">Pendente</option>
+                                                    <option value="Isento">Isento</option>
+                                                </select>
+                                            </div>
+                                            <p class="div_btn_DomicílioFiscal1" align="right" style="margin:0px; font-size:12px; cursor:pointer;"><a class="btn_DomicílioFiscal2" href="" style="color:#6AA1A6;">+ Adicionar Domicílio Fical</a></p>
+                                            <div class="mb-3 col-12 col-md-4 div_DomicílioFiscal2 div_pais" style="display:none;">
+                                                <label class="form-label">País de Domicílio Fiscal 2</label>
+                                                <div class="spinner-border spinner-border-sm text-primary spinner_pais" role="status" style="display: none;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                                <select class="form-select dados_cotista campo_obrigatorio select_pais" data-id_atributo="17" data-tipo="select"></select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4 div_DomicílioFiscal2" style="display:none;">
+                                                <label class="form-label">CPF ou N° de Identif. Fiscal (NIF)</label>
+                                                <input type="text" class="form-control dados_cotista atributo_18" data-id_atributo="18" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4 div_DomicílioFiscal2" style="display:none;">
+                                                <label class="form-label">Caso não possua NIF, escolher motivo:</label>
+                                                <select class="form-select dados_cotista campo_obrigatorio atributo_19" data-id_atributo="19" data-tipo="select">
+                                                    <option value="Não Exige" selected="selected">Não Exige</option>
+                                                    <option value="Pendente">Pendente</option>
+                                                    <option value="Isento">Isento</option>
+                                                </select>
+                                            </div>
+                                            <p class="div_btn_DomicílioFiscal2" align="right" style="margin:0px; font-size:12px; color:#6AA1A6; cursor:pointer; display:none;"><a class="excluir_addDomicílioFiscal2" href="" style="padding-right:10px; color:#6AA1A6;">- Excluir Domicílio Fical</a><a class="btn_addDomicílioFiscal3" href="" style="color:#6AA1A6;">+ Adicionar Domicílio Fical</a></p>
+                                            <div class="mb-3 col-12 col-md-4 div_DomicílioFiscal3 div_pais" style="display:none;">
+                                                <label class="form-label">País de Domicílio Fiscal 3</label>
+                                                <div class="spinner-border spinner-border-sm text-primary spinner_pais" role="status" style="display: none;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                                <select class="form-select dados_cotista campo_obrigatorio select_pais" data-id_atributo="20" data-tipo="select"></select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4 div_DomicílioFiscal3" style="display:none;">
+                                                <label class="form-label">CPF ou N° de Identif. Fiscal (NIF)</label>
+                                                <input type="text" class="form-control dados_cotista atributo_21" data-id_atributo="21" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-4 div_DomicílioFiscal3" style="display:none;">
+                                                <label class="form-label">Caso não possua NIF, escolher motivo:</label>
+                                                <select class="form-select dados_cotista atributo_22" data-id_atributo="22" data-tipo="select">
+                                                    <option value="Não Exige" selected="selected">Não Exige</option>
+                                                    <option value="Pendente">Pendente</option>
+                                                    <option value="Isento">Isento</option>
+                                                </select>
+                                            </div>
+                                            <p class="div_btn_DomicílioFiscal3" align="right" style="margin:0px; font-size:12px; color:#6AA1A6; cursor:pointer; display:none;"><a class="excluir_DomicílioFiscal3" href="" style="color:#6AA1A6;">- Excluir Domicílio Fical</a></p>
+                                            <div class="mb-3 col-12 col-md-12">
+                                                <p style="font-size:14px; margin-bottom:0px;">Motivos de dispensa de apresentação de NIF:</p>
+                                                <li style="font-size:14px;"><b>Não Exige: </b>O país/jurisdição onde o cliente é residente não emite NIFs para seus residentes;</li>
+                                                <li style="font-size:14px;"><b>Pendente: </b>O cliente aguarda a obtenção de um NIF ou número equivalente, <b>o qual se compromente a entregar tão logo o receba</b>;</li>
+                                                <li style="font-size:14px;"><b>Isento: </b>Apesar do país/jurisdição emitir NIFs para seus residentes, um NIF não é necessério excepcionalmente (somente selecione esse motivo caso a lei doméstica da jurisdição referente não exija a coleta do NIF emitido por tal jurisdição);</li>
+                                                
+                                                <p style="font-size:14px; margin-top:10px;">Caso tenha informado <u>EUA ou Territ;orios dos Estados Unidos da América, favor apresentar também o Wform em nome do cliente. </u></p>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-12">
+                                                <p style="font-size:11px;">¹ Para cumprimento das regras implantadas pela Organização para a Coorperação e Desenvolvimento Econômino - OCDE (Denominada Common Reporting Standard) e pelo FATCA (Foreign Account Tax Compliance Act), regulamentadas no Brasil pela Instução Normativa da Receita Federal do Brasil n°1.571 de 2015, com alterações posteriores.</p>
+                                            </div>
+    
+                                            <!-- Endereçoes  -->
+                                            <div class="col-12 col-md-12">
+                                                <h5 class="mb-3 mt-3">Endereços</h5>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-12 div_email">
+                                                <label class="form-label">Email
+                                                    <span class="text-danger">*</span>
+                                                    <span class="email_validado_api" style="display: none;"><i class="fa-solid fa-shield-halved fa-fw" style="color:#308930;"></i></span>
+                                                    <span class="email_alerta_api" style="display: none;"><i class="fa-solid fa-shield-virus fa-fw" style="color:#9b0c0c; "></i></span>
+                                                    <span class="spinner-border spinner-border-sm text-primary spinner_check_email" style="display:none;"></span>
+                                                </label>
+                                                <input type="text" class="form-control dados_cotista verifica_email campo_obrigatorio" data-id_atributo="23" data-tipo="input" required>
+                                                <div class="erro_email invalid-feedback" style="display: none;"><span class="text_msg">O e-mail não é válido.</span></div>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label class="form-label">Telefone</label>
+                                                <input type="tel" class="form-control dados_cotista campo_telefone" data-id_atributo="24" data-tipo="input_telefone" >
+                                            </div>
+                                            <div class="mb-4 col-12 col-md-6">
+                                                <label class="form-label">Celular<span class="text-danger">*</span></label>
+                                                <input type="tel" class="form-control dados_cotista campo_telefone campo_obrigatorio" data-id_atributo="25" data-tipo="input_telefone" required>
+                                            </div>
+                                            
+                                            <label class="form-label"><b>Endereço Residencial<span class="text-danger">*</span></b></label>
+                                            <div class="div_end div_end_geral row" data-endereco="principal" style="padding:0px; margin:0px;">
+                                                <div class="mb-3 col-12 col-lg-12">
+                                                    <label class="form-label">Localização do Endereço:</label>
+                                                    <select class="form-select campo_obrigatorio dados_cotista localizacao_end">
+                                                        <option value="BR">No Brasil</option>
+                                                        <option value="fora">Fora do Brasil</option>
+                                                    </select>
+                                                </div>
+                                                <div class="end_localizado_br row" style="padding:0px; margin:0px;">
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">CEP<span class="text-danger">*</span></label>
+                                                        <div class="spinner-border spinner-border-sm text-primary spinner_cep" role="status" style="display: none;">
+                                                            <span class="sr-only"></span>
+                                                        </div>
+                                                        <input type="text" class="form-control dados_cotista campo_cep" data-id_atributo="26" data-tipo="input" required>
+                                                        <div class="erro_cep invalid-feedback" style="display: none;"><span class="text_msg">CEP informado é válido.</span></div>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-8">
+                                                        <label class="form-label">Rua/Av.</label>
+                                                        <input type="text" class="form-control dados_cotista end_rua campo_cep_block" data-id_atributo="29" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">Número<span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control dados_cotista campo_obrigatorio end_num" data-id_atributo="28" data-tipo="input" required>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">Complemento</label>
+                                                        <input type="text" class="form-control dados_cotista end_complemento" data-id_atributo="27" data-tipo="input">
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">Bairro</label>
+                                                        <input type="text" class="form-control dados_cotista end_bairro campo_cep_block" data-id_atributo="33" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">UF</label>
+                                                        <input type="text" class="form-control dados_cotista end_uf campo_cep_block" data-id_atributo="31" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-4 col-12 col-md-4">
+                                                        <label class="form-label">Cidade</label>
+                                                        <input type="text" class="form-control dados_cotista end_cidade campo_cep_block" data-id_atributo="30" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">País</label>
+                                                        <input type="text" class="form-control dados_cotista end_pais campo_cep_block" data-id_atributo="32" data-tipo="input" val="Brasil" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="end_localizado_fora row" style="display: none; padding:0px; margin:0px;">
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">CEP/Código Postal<span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control dados_cotista campo_cod_postal campo_obrigatorio" data-id_atributo="26" data-tipo="input" required>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-8">
+                                                        <label class="form-label">Rua/Av.</label>
+                                                        <input type="text" class="form-control dados_cotista end_rua" data-id_atributo="29" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">Número<span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control dados_cotista campo_obrigatorio end_num" data-id_atributo="28" data-tipo="input" required>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">Complemento</label>
+                                                        <input type="text" class="form-control dados_cotista end_complemento" data-id_atributo="27" data-tipo="input">
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">Bairro</label>
+                                                        <input type="text" class="form-control dados_cotista campo_obrigatorio end_bairro" data-id_atributo="33" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">UF<span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control dados_cotista end_uf" data-id_atributo="31" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-4 col-12 col-md-4">
+                                                        <label class="form-label">Cidade<span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control dados_cotista campo_obrigatorio end_cidade" data-id_atributo="30" data-tipo="input" disabled>
+                                                    </div>
+                                                    <div class="mb-3 col-12 col-md-4">
+                                                        <label class="form-label">País<span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control dados_cotista campo_obrigatorio end_pais" data-id_atributo="32" data-tipo="input" disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p align="right" style="margin:0px; font-size:12px; cursor:pointer;"><a class="btn_outro_endereco" href="" style="color:#6AA1A6;">+ Adicionar outro endereço</a></p>
+                                            <div class="div_outro_endereco" style="padding: 0px; margin: 0xp; display: none;">
+                                                <label class="form-label" style="padding-left:15px;"><b>Outro Endereço</b></label>
+                                                <div class="div_end_2 div_end_geral row"  data-endereco="outro" style="padding:0px; margin:0px;">
+                                                    <div class="mb-3 col-12 col-lg-12">
+                                                        <label class="form-label">Localização do Endereço:</label>
+                                                        <select class="form-select campo_obrigatorio dados_cotista localizacao_end">
+                                                            <option value="BR">No Brasil</option>
+                                                            <option value="fora">Fora do Brasil</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="end_localizado_br row" style="padding:0px; margin:0px;">
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">CEP<span class="text-danger">*</span></label>
+                                                            <div class="spinner-border spinner-border-sm text-primary spinner_cep" role="status" style="display: none;">
+                                                                <span class="sr-only"></span>
+                                                            </div>
+                                                            <input type="text" class="form-control dados_cotista campo_cep" data-id_atributo="34" data-tipo="input" required>
+                                                            <div class="erro_cep invalid-feedback" style="display: none;"><span class="text_msg">CEP informado é válido.</span></div>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-8">
+                                                            <label class="form-label">Rua/Av.</label>
+                                                            <input type="text" class="form-control dados_cotista end_rua campo_cep_block" data-id_atributo="37" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">Número<span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control dados_cotista campo_obrigatorio end_num" data-id_atributo="36" data-tipo="input" required>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">Complemento</label>
+                                                            <input type="text" class="form-control dados_cotista end_complemento" data-id_atributo="35" data-tipo="input">
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">Bairro</label>
+                                                            <input type="text" class="form-control dados_cotista end_bairro campo_cep_block" data-id_atributo="41" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">UF</label>
+                                                            <input type="text" class="form-control dados_cotista end_uf campo_cep_block" data-id_atributo="39" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-4 col-12 col-md-4">
+                                                            <label class="form-label">Cidade</label>
+                                                            <input type="text" class="form-control dados_cotista end_cidade campo_cep_block" data-id_atributo="38" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">País</label>
+                                                            <input type="text" class="form-control dados_cotista end_pais campo_cep_block" data-id_atributo="40" data-tipo="input" val="Brasil" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="end_localizado_fora row" style="display: none; padding:0px; margin:0px;">
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">CEP/Código Postal<span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control dados_cotista campo_cod_postal campo_obrigatorio" data-id_atributo="34" data-tipo="input" required>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-8">
+                                                            <label class="form-label">Rua/Av.<span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control dados_cotista end_rua campo_obrigatorio" data-id_atributo="37" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">Número<span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control dados_cotista campo_obrigatorio end_num" data-id_atributo="36" data-tipo="input" required>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">Complemento</label>
+                                                            <input type="text" class="form-control dados_cotista end_complemento" data-id_atributo="35" data-tipo="input">
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">Bairro</label>
+                                                            <input type="text" class="form-control dados_cotista campo_obrigatorio end_bairro" data-id_atributo="41" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">UF<span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control dados_cotista end_uf campo_obrigatorio" data-id_atributo="39" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-4 col-12 col-md-4">
+                                                            <label class="form-label">Cidade<span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control dados_cotista campo_obrigatorio end_cidade" data-id_atributo="38" data-tipo="input" disabled>
+                                                        </div>
+                                                        <div class="mb-3 col-12 col-md-4">
+                                                            <label class="form-label">País<span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control dados_cotista campo_obrigatorio end_pais" data-id_atributo="40" data-tipo="input" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p align="right" style="margin:0px; font-size:12px; cursor:pointer;"><a class="btn_excluir_outro_endereco" href="" style="color:#6AA1A6;">+ Excluir endereço</a></p>
+                                            </div>
+    
+                                            <!-- Dados Profissionais  -->
+                                            <div class="col-12 col-md-12">
+                                                <h5 class="mb-3 mt-3">Dados Profissionais</h5>
+                                            </div>
+                                            <label class="form-label"><b>Cliente</b></label>
+                                            <div class="mb-3 col-12 col-md-12">
+                                                <div class="form-check custom-checkbox">
+                                                    <input type="checkbox" class="form-check-input dados_cotista checkbox_OcupacaoProfissional" data-id_atributo="42" data-tipo="checkbox" id="customCheck1">
+                                                    <label class="form-check-label" for="customCheck1" style="font-size:0.875rem;">É dependente</label>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_OcupacaoProfissional">
+                                                <label class="form-label">Ocupação Profissional<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control dados_cotista campo_obrigatorio" data-id_atributo="43" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_OcupacaoProfissional">
+                                                <label class="form-label">Cargo(se Funcionário Público)</label>
+                                                <input type="text" class="form-control dados_cotista" data-id_atributo="44" data-tipo="input">
+                                            </div>
+                                            
+                                            <label class="form-label div_ResponsavelFinanceiro" style="display: none;"><b>Responsável Financeiro</b></label>
+                                            <div class="mb-3 col-12 col-md-12 div_ResponsavelFinanceiro" style="display: none;">
+                                                <p style="font-size:14px; margin-bottom:0px;">Preenchimento obrigatório, caso tenha se declarado como dependente.</p>
+                                            </div>  
+                                            <div class="mb-3 col-12 col-md-6 div_ResponsavelFinanceiro" style="display: none;">
+                                                <label class="form-label">CPF<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control dados_cotista campo_obrigatorio" data-id_atributo="45" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_ResponsavelFinanceiro" style="display: none;">
+                                                <label class="form-label">Ocupação Profissional<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control dados_cotista campo_obrigatorio" data-id_atributo="46" data-tipo="input">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_ResponsavelFinanceiro" style="display: none;">
+                                                <label class="form-label">Cargo(se Funcionário Público)</label>
+                                                <input type="text" class="form-control dados_cotista" data-id_atributo="47" data-tipo="input">
+                                            </div>
+                                            
+    
+                                            <!-- Situação Financeira e Patrimonial Estimada  -->
+                                            <div class="col-12 col-md-12">
+                                                <h5 class="mb-3 mt-3">Situação Financeira e Patrimonial Estimada</h5>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-12">
+                                                <p style="font-size:14px; margin-bottom:0px;">Preencha sua renda total anual e os valores do seu patrimônio estimado em cada categoria, ou com os dados do Responsável Financeiro, caso tenha se declarado como dependente.</p>
+                                            </div>                         
+                                            <div class="mb-3 col-12 col-md-8">    
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Renda Total Anual (R$)<span class="text-danger">*</span>:</span>
+                                                    </div>
+                                                    <input type="text" class="form-control dados_cotista campo_obrigatorio formato_numero" data-id_atributo="48" data-tipo="input">
+                                                </div>
+                                            </div> 
+    
+                                            <label class="form-label"><b>Patrimonio</b></label>
+                                            <div class="mb-3 col-12 col-md-8">    
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="width:400px;">Bens móvies (carros, eletrodomésticos, etc.)<span class="text-danger">*</span>  R$:</span>
+                                                    </div>
+                                                    <input type="text" class="form-control dados_cotista campo_obrigatorio formato_numero" data-id_atributo="49" data-tipo="input">
+                                                </div>
+                                            </div> 
+                                            <div class="mb-3 col-12 col-md-8">    
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"  style="width:400px;">Bens imóvies (apartamentos, casas, etc.)<span class="text-danger">*</span>  R$:</span>
+                                                    </div>
+                                                    <input type="text" class="form-control dados_cotista campo_obrigatorio formato_numero" data-id_atributo="50" data-tipo="input">
+                                                </div>
+                                            </div> 
+                                            <div class="mb-3 col-12 col-md-8">    
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"  style="width:400px;">Investimentos (renda fixa, fundos, etc.)<span class="text-danger">*</span>  R$:</span>
+                                                    </div>
+                                                    <input type="text" class="form-control dados_cotista campo_obrigatorio formato_numero" data-id_atributo="51" data-tipo="input">
+                                                </div>
+                                            </div> 
+                                            <div class="mb-3 col-12 col-md-8">    
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"  style="width:400px;">Previdência Privada<span class="text-danger">*</span>  R$:</span>
+                                                    </div>
+                                                    <input type="text" class="form-control dados_cotista campo_obrigatorio formato_numero" data-id_atributo="52" data-tipo="input">
+                                                </div>
+                                            </div> 
+                                            <div class="mb-3 col-12 col-md-8">    
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"  style="width:400px;">Outros (saldo em conta corrente, etc.)<span class="text-danger">*</span>  R$:</span>
+                                                    </div>
+                                                    <input type="text" class="form-control dados_cotista campo_obrigatorio formato_numero" data-id_atributo="53" data-tipo="input">
+                                                </div>
+                                            </div> 
+    
+                                                <!-- Clientes estrangeiros ao Brasil  -->
+                                                <div class="col-12 col-md-12">
+                                                <h5 class="mb-3 mt-3"> Clientes estrangeiros ao Brasil</h5>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-12">
+                                                <div class="form-check custom-checkbox">
+                                                    <input type="checkbox" class="form-check-input dados_cotista checkbox_NaoResidentes" data-id_atributo="54" data-tipo="checkbox" id="customCheck1">
+                                                    <label class="form-check-label" for="customCheck1" style="font-size:0.875rem;">É um Investidores Não Residentes</label>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-12 div_NaoResidentes" style="display: none;">
+                                                <p style="font-size:14px; margin-bottom:0px;">Clientes considerados Investidores Não Residentes no Brasil, informar:</p>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_NaoResidentes" style="display: none;">
+                                                <div class="form-check custom-checkbox">
+                                                    <input type="checkbox" class="form-check-input dados_cotista" data-id_atributo="55" data-tipo="checkbox">
+                                                    <label class="form-check-label" for="customCheck1" style="font-size:0.875rem;">Conta de Domiciliado no Exterior - CDE - Informar seu CPF:</label>
+                                                    <input type="text" class="form-control dados_cotista" data-id_atributo="58" data-tipo="input">
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6 div_NaoResidentes" style="display: none;">
+                                                <div class="form-check custom-checkbox">
+                                                    <input type="checkbox" class="form-check-input dados_cotista" data-id_atributo="56" data-tipo="checkbox">
+                                                    <label class="form-check-label" for="customCheck1" style="font-size:0.875rem;">Investidor não Residente - Lei 4131 - Informar seu CPF:</label>
+                                                    <input type="text" class="form-control dados_cotista" data-id_atributo="59" data-tipo="input">
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-12 div_NaoResidentes" style="display: none;">
+                                                <div class="form-check custom-checkbox">
+                                                    <input type="checkbox" class="form-check-input dados_cotista" data-id_atributo="57" data-tipo="checkbox">
+                                                    <label class="form-check-label" for="customCheck1" style="font-size:0.875rem;">Investidor não Residente - Resolução 4373/14 - Seguir com o preenchimento do Anexo 4373 Pessoa Física</label>
+                                                </div>
+                                            </div>
+    
+                                            <!-- Declaração  -->
+                                            <div class="col-12 col-md-12">
+                                                <h5 class="mb-3 mt-3"> Declaração</h5>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-12">
+                                                <label class="form-check-label" for="customCheck1" style="font-size:0.875rem; text-align: justify;"> <input type="checkbox" class="form-check-input dados_cotista campo_obrigatorio" data-id_atributo="60" data-tipo="checkbox">   Declaro para todos os fins legais e sob pena de falsidade ideológica serem verdadeiras, válidas, corretas e completas as 
+                                                    informações fornecidas para o preenchimento de todas as fichas cadastrais (“Kit Cadastral”) da Atmos Capital Gestão de Recursos Ltda (doravante designados “Atmos Capital”) 
+                                                    e Banco BTG Pactual S.A. e demais empresas do conglomerado financeiro (doravante designados “BTG Pactual”), inclusive os números de inscrição para fins fiscais bem como os 
+                                                    dados e declarações anexos, devendo quaisquer alterações que vierem a ocorrer nos meus dados cadastrais serem por mim informadas no prazo máximo de dez dias, devendo prover 
+                                                    toda a documentação suporte que se faça necessária. Até que seja prestada essa informação de alteração de dados, declaro concordar com quaisquer atos ou eventos que venham 
+                                                    a ocorrer para os quais a Atmos Capital e o BTG Pactual leve em consideração os dados cadastrais ora informados. Declaro ainda, que atualizarei minhas informações sempre 
+                                                    que requerido, na forma e prazo informados pelo Distribuidor.</label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                     
+
+
+
+                            </div>
+                        </div>
+
+                        <!-- card DIQ-->
+                        <div class="card rounded-3 mb-4 shadow-sm card_diq card_info_cadastro" style="display: none;">
+                            <!-- card header -->
+                            <div class="card-header bg-white p-4">
+                                <h3 class="mb-0 h4">Declaração de IQ</h3>
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body p-4">
+                                <div class="mb-3 col-12 col-md-12">
+                                    <label class="form-label" for="email">Sou Investidor Qualificado:<span class="text-danger">*</span></label>
+                                    <div class="tab-content" id="pills-tabContent-radios-second">
+                                        <div class="tab-pane tab-example-design fade active show dados_diq"  data-id_atributo="76" data-tipo="radio" role="tabpanel" aria-labelledby="pills-radios-second-design-tab">
+                                            <div class="form-check custom-radio form-check-inline">
+                                                <input type="radio" name="atributo_76" class="form-check-input" value="1">
+                                                <label class="form-check-label">Sim</label>
+                                            </div>
+                                            <div class="form-check custom-radio form-check-inline dados_diq">
+                                                <input type="radio" name="atributo_76" class="form-check-input" value="0">
+                                                <label class="form-check-label">Não sou Investidor Qualificado.</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-12">
+                                    <h5 class="mb-3 mt-3"> Declaração</h5>
+                                </div>
+                                <div class="mb-3 col-12 col-md-12">
+                                    <label class="form-check-label" for="customCheck1" style="font-size:0.875rem; text-align: justify;"> <input type="checkbox" data-id_atributo="77" data-tipo="checkbox" class="form-check-input dados_diq">   
+                                        Ao assinar este termo, afirmo minha condição de investidor qualificado e declaro possuir conhecimento sobre o mercado financeiro suficiente para que não me sejam aplicáveis
+                                        um conjunto de proteções legais e regulamentares conferidas aos investidores que não sejam qualificados. Como investidor qualificado, atesto ser capaz de entender e ponderar 
+                                        os riscos financeiros relacionados à aplicação de meus recursos em valores mobiliários que só podem ser adquiridos por investidores qualificados. Declaro, sob as penas da lei,
+                                        que possuo investimentos financeiros em valor superior a R$ 1.000.000,00 (um milhão de reais).
+                                    </label>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="formFileSm" class="form-label">Comprovante de Renda/Patrimônio satisfatório (Declaração de IR do último exercício, etc.)   </label>
+                                    <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- card Suitability-->
+                        <div class="card rounded-3 mb-4 shadow-sm card_perfil_risco card_info_cadastro" style="display: none;">
+                            <!-- card header -->
+                            <div class="card-header bg-white p-4">
+                                <h3 class="mb-0 h4">Perfil de Risco do Cliente</h3>
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body p-4">
+                                <div class="d-md-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                                    <div class="col-7">
+                                        <h4 class="mb-1 h6">Progresso (<span class="porcentagem_perfil_risco"></span>%)
+                                            <span class="bnt_pendencias_perfil_risco text-danger" style="cursor:pointer; zoom:75%; padding-left:15px; color:#f2c7c4;">Marcar campos pendentes</span>
+                                        </h4>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-success progress_perfil_risco" role="progressbar" style="width: 92%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-primary btn-sm btn_editar_perfil_risco" type="button">Editar Campos</button>
+                                        <button class="btn btn-light btn-sm" type="button" disabled="disabled">
+                                            <span class="btn_status_perfil_risco"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-3 col-12 col-md-12">
+                                   <p style="font-size:14px;">Para fazer bons investimentos é fundamental saber qual é o seu perfil de investidor. Com base nessa informação, podemos te auxiliar na escolha dos produtos ideais para você. 
+                                    E para descobri-la, vamos te fazer algumas perguntas.</p>
+
+                                    <p style="font-size:14px;">As respostas são confidenciais e serão utilizadas apenas para a definição do seu perfil de investidor.</p>
+
+                                    <label class="form-label label-suitability">1. Qual o seu principal objetivo ao investir?</label>
+                                    <div class="tab-pane tab-pr fade show active" data-id_atributo="62" role="tabpanel" aria-labelledby="pills-radios-design-tab">
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_62"  data-id_atributo="62" class="form-check-input option_perfil_risco" value="a">
+                                            <label class="form-label">Preservação de patrimônio</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_62" data-id_atributo="62"  class="form-check-input option_perfil_risco" value="b">
+                                            <label class="form-label">Combinação entre preservação e valorização do patrimônio, assumindo um risco mediano</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_62"  data-id_atributo="62" class="form-check-input option_perfil_risco" value="c">
+                                            <label class="form-label">Maximizar o meu potencial de ganhos assumindo um maior risco</label>
+                                        </div>
+                                    </div>
+
+                                    <label class="form-label label-suitability">2. Por quanto tempo pretende deixar o dinheiro investido no fundos de investimento da Atmos Capital?</label>
+                                    <div class="tab-pane tab-pr fade show active" data-id_atributo="63" role="tabpanel" aria-labelledby="pills-radios-design-tab">
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_63" class="form-check-input option_perfil_risco" value="a">
+                                            <label class="form-label">Por até 1 ano porque devo precisar desses recursos</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_63" class="form-check-input option_perfil_risco" value="b">
+                                            <label class="form-label">Entre 1 e 5 anos, pois quero alcançar um objetivo específico, mas posso precisar dos recursos antes desse tempo</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio"  name="atributo_63" class="form-check-input option_perfil_risco" value="c">
+                                            <label class="form-label">Por mais de 5 anos, já que tenho objetivos de longo prazo, como utilizá-los na aposentadoria</label>
+                                        </div>
+                                    </div>
+
+                                    <label class="form-label label-suitability">3. Qual faixa de valor correspondente à sua renda mensal?</label>
+                                    <div class="tab-pane tab-pr fade show active" data-id_atributo="64" role="tabpanel" aria-labelledby="pills-radios-design-tab">
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_64" class="form-check-input option_perfil_risco" value="a">
+                                            <label class="form-label">Até R$50.000</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_64" class="form-check-input option_perfil_risco" value="b">
+                                            <label class="form-label">De R$ 50.000 até R$ 70.000</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_64" class="form-check-input option_perfil_risco"  value="c">
+                                            <label class="form-label">Acima de R$ 70.000</label>
+                                        </div>
+                                    </div>
+
+                                    <label class="form-label label-suitability">4. Qual faixa de valor corresponde ao seu patrimônio?</label>
+                                    <div class="tab-pane tab-pr fade show active" data-id_atributo="65" role="tabpanel" aria-labelledby="pills-radios-design-tab">
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_65" class="form-check-input option_perfil_risco" value="a">
+                                            <label class="form-label">Até R$ 3.000.000</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_65" class="form-check-input option_perfil_risco" value="b">
+                                            <label class="form-label">De R$ 3.000.000 até R$ 10.000.000</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_65" class="form-check-input option_perfil_risco" value="c">
+                                            <label class="form-label">Acima de R$ 10.000.000</label>
+                                        </div>
+                                    </div>
+
+                                    <label class="form-label label-suitability">5. Qual seu nível de formação acadêmica?</label>
+                                    <div class="tab-pane tab-pr fade show active" data-id_atributo="65" role="tabpanel" aria-labelledby="pills-radios-design-tab">
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_70" class="form-check-input option_perfil_risco" value="a">
+                                            <label class="form-label">Ensino Fundamental</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_70" class="form-check-input option_perfil_risco" value="b">
+                                            <label class="form-label">Ensino Médio</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_70" class="form-check-input option_perfil_risco" value="c"> 
+                                            <label class="form-label">Ensino Superior</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_70" class="form-check-input option_perfil_risco" value="d"> 
+                                            <label class="form-label">Pós-graduação, mestrado ou doutorado</label>
+                                        </div>
+                                    </div>
+
+                                    <label class="form-label label-suitability">6. Qual volume você investiu nos últimos 12 meses?</label>
+                                    <div class="tab-pane tab-pr fade show active" data-id_atributo="69" role="tabpanel" aria-labelledby="pills-radios-design-tab">
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_69" class="form-check-input option_perfil_risco" value="a"> 
+                                            <label class="form-label">Até R$ 25.000</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_69" class="form-check-input option_perfil_risco" value="b"> 
+                                            <label class="form-label">Entre R$ 25.000 e R$ 50.000</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_69" class="form-check-input option_perfil_risco" value="c"> 
+                                            <label class="form-label">Entre R$ 50.000 e R$ 150.000</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_69" class="form-check-input option_perfil_risco" value="d">
+                                            <label class="form-label">Acima de R$ 150.000</label>
+                                        </div>
+                                    </div>
+
+                                    <label class="form-label label-suitability">7. Como você reagiria a uma queda de 10% em um dos seus investimentos?</label>
+                                    <div class="tab-pane tab-pr fade show active" data-id_atributo="69" role="tabpanel" aria-labelledby="pills-radios-design-tab">
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_68" class="form-check-input option_perfil_risco" value="a"> 
+                                            <label class="form-label">Venderia.</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_68" class="form-check-input option_perfil_risco" value="b"> 
+                                            <label class="form-label">Observaria por um tempo e, se a perdas continuassem, venderia.</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_68" class="form-check-input option_perfil_risco" value="c"> 
+                                            <label class="form-label">Buscaria mais informações para decidir se mantenho o investimento ou não.</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_68" class="form-check-input option_perfil_risco" value="d">  
+                                            <label class="form-label">Avalio se a queda criou oportunidade para aumentar minha exposição ao investimento.</label>
+                                        </div>
+                                    </div>
+
+                                    <label class="form-label label-suitability">8. Você possui familiaridade ou já realizou investimentos de algum desses tipos no passado:</label>
+                                    <label class="form-label">a. Renda Fixa (Títulos Públicos, CDBs, Debêntures).</label>
+                                    <div class="tab-content">
+                                        <div class="tab-pane tab-pr fade active show"  data-id_atributo="67" role="tabpanel" aria-labelledby="pills-radios-second-design-tab">
+                                            <div class="form-check custom-radio form-check-inline">
+                                                <input type="radio" name="atributo_67" class="form-check-input option_perfil_risco" value="a"> 
+                                                <label class="form-check-label">Não.</label>
+                                            </div>
+                                            <div class="form-check custom-radio form-check-inline">
+                                                <input type="radio" name="atributo_67" class="form-check-input option_perfil_risco" value="b"> 
+                                                <label class="form-check-label">Sim, mas não investi recentemente.</label>
+                                            </div>
+                                            <div class="form-check custom-radio form-check-inline">
+                                                <input type="radio"  name="atributo_67" class="form-check-input option_perfil_risco" value="c"> 
+                                                <label class="form-check-label">Sim e investi nos últimos 12 meses.</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <label class="form-label">b. Previdência Privada</label>
+                                    <div class="tab-content">
+                                        <div class="tab-pane tab-pr fade active show" data-id_atributo="66" role="tabpanel" aria-labelledby="pills-radios-second-design-tab">
+                                            <div class="form-check custom-radio form-check-inline">
+                                                <input type="radio" name="atributo_66" class="form-check-input option_perfil_risco" value="a"> 
+                                                <label class="form-check-label">Não.</label>
+                                            </div>
+                                            <div class="form-check custom-radio form-check-inline">
+                                                <input type="radio" name="atributo_66" class="form-check-input option_perfil_risco" value="b">  
+                                                <label class="form-check-label">Sim, mas não investi recentemente.</label>
+                                            </div>
+                                            <div class="form-check custom-radio form-check-inline">
+                                                <input type="radio" name="atributo_66" class="form-check-input option_perfil_risco" value="c">
+                                                <label class="form-check-label">Sim e investi nos últimos 12 meses.</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <label class="form-label">c. Renda Variável (Ações, Fundos de ações, ETFs)</label>
+                                    <div class="tab-content">
+                                        <div class="tab-pane tab-pr fade active show" data-id_atributo="71" role="tabpanel" aria-labelledby="pills-radios-second-design-tab">
+                                            <div class="form-check custom-radio form-check-inline">
+                                                <input type="radio" name="atributo_71" class="form-check-input option_perfil_risco" value="a"> 
+                                                <label class="form-check-label">Não.</label>
+                                            </div>
+                                            <div class="form-check custom-radio form-check-inline">
+                                                <input type="radio" name="atributo_71" class="form-check-input option_perfil_risco" value="b"> 
+                                                <label class="form-check-label">Sim, mas não investi recentemente.</label>
+                                            </div>
+                                            <div class="form-check custom-radio form-check-inline">
+                                                <input type="radio" name="atributo_71" class="form-check-input option_perfil_risco" value="c"> 
+                                                <label class="form-check-label">Sim e investi nos últimos 12 meses.</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <label class="form-label">d. Derivativos (opções, futuros, termos) e COE</label>
+                                    <div class="tab-content">
+                                        <div class="tab-pane tab-pr fade active show" data-id_atributo="72" role="tabpanel" aria-labelledby="pills-radios-second-design-tab">
+                                            <div class="form-check custom-radio form-check-inline">
+                                                <input type="radio" name="atributo_72" class="form-check-input option_perfil_risco" value="a"> 
+                                                <label class="form-check-label">Não.</label>
+                                            </div>
+                                            <div class="form-check custom-radio form-check-inline">
+                                                <input type="radio" name="atributo_72" class="form-check-input option_perfil_risco" value="b"> 
+                                                <label class="form-check-label">Sim, mas não investi recentemente.</label>
+                                            </div>
+                                            <div class="form-check custom-radio form-check-inline">
+                                                <input type="radio" name="atributo_72" class="form-check-input option_perfil_risco" value="c">
+                                                <label class="form-check-label">Sim e investi nos últimos 12 meses.</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <label class="form-label label-suitability">9. Selecione quais ativos você possui atualmente na carteira (caso não tenho nenhum desses ativos, considerar 0 para a contagem das
+                                        respostas):</label>
+                                    <div class="tab-pane tab-pr fade show active"  data-id_atributo="73" role="tabpanel" aria-labelledby="pills-radios-design-tab">
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_73" class="form-check-input option_perfil_risco" value="a"> 
+                                            <label class="form-label">Renda Fixa (Títulos Públicos, CDBs, Debêntures).</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_73" class="form-check-input option_perfil_risco" value="b"> 
+                                            <label class="form-label">Previdência Privada.</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_73" class="form-check-input option_perfil_risco" value="c"> 
+                                            <label class="form-label">Renda Variável (Ações, Fundos de ações, ETFs).</label>
+                                        </div>
+                                        <div class="form-check custom-radio">
+                                            <input type="radio" name="atributo_73" class="form-check-input option_perfil_risco" value="d"> 
+                                            <label class="form-label">Derivativos (opções, futuros, termos) e COE.</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card Documentos Pessoais
+                        <div class="card rounded-3 mb-4 shadow-sm card_documentos_pessoais">
+                            
+                            <div class="card-header bg-white p-4">
+                                <h3 class="mb-0 h4">Documentos Pessoais</h3>
+                            </div>
+                            
+                            <div class="card-body p-4">
+                                <div class="documentos_titular">
+                                    <h5 class="mb-3">Titular</h5>
+                                    <div class="mb-3">
+                                        <label for="formFileSm" class="form-label">Documento de identificação (RG, CNH, Carteira Profissional, Passaporte, etc) </label>
+                                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFileSm" class="form-label">CPF (Caso o número não seja mencionado no documento de identificação)  </label>
+                                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFileSm" class="form-label">Comprovante de Residência - último trimestre (Conta de Luz, Água, Gás, IPTU ou Telefonia fixa)   </label>
+                                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFileSm" class="form-label">Comprovante de Residência - último trimestre (Conta de Luz, Água, Gás, IPTU ou Telefonia fixa)  </label>
+                                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                    </div>
+                                </div>
+
+                                <div class="documentos_cotitular">
+                                    <h5 class="mb-3">Cotitular</h5>
+                                    <div class="mb-3">
+                                        <label for="formFileSm" class="form-label">Documento de identificação (RG, CNH, Carteira Profissional, Passaporte, etc) </label>
+                                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFileSm" class="form-label">CPF (Caso o número não seja mencionado no documento de identificação)  </label>
+                                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFileSm" class="form-label">Comprovante de Residência - último trimestre (Conta de Luz, Água, Gás, IPTU ou Telefonia fixa)   </label>
+                                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFileSm" class="form-label">Comprovante de Residência - último trimestre (Conta de Luz, Água, Gás, IPTU ou Telefonia fixa)  </label>
+                                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                    </div>
+                                </div>
+
+                                <div class="documentos_representante_procurador">
+                                    <h5 class="mb-3">Representante/Procurador</h5>
+                                    <div class="mb-3">
+                                        <label for="formFileSm" class="form-label">Procuração (cópia autenticada)   </label>
+                                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFileSm" class="form-label">CPF (Caso o número não seja mencionado no documento de identificação)(cópia autenticada)</label>
+                                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFileSm" class="form-label">Documento de Identificação (RG, CNH, Carteira Profissional, Passaporte, Certidão de Nascimento para menores,etc.)(cópia autenticada)   </label>
+                                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFileSm" class="form-label">Comprovante de Residência caso essa informação não conste na procuração (cópia simples)   </label>
+                                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFileSm" class="form-label">Cartão de assinaturas (com firma reconhecida ou abono bancário)   </label>
+                                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>-->
+
+                        <!-- card Pendencias -->
+                        <div class="card rounded-3 mb-4 shadow-sm card_pendencias card_info_cadastro">               
+                            <div class="card-body p-4 d-md-flex justify-content-between align-items-center " style="font-size:14px; display: none;">
+                                <div> 
+                                    <p class="mb-0">
+                                        Verifique se há alguma pendência e se os dados foram inseridos corretamente antes de enviar o cadastro.
+                                    </p>
+                                </div>
+                            <div><button class="btn btn-primary btn-sm btn_verificar_pendencias btn_status_scroll" data-div_scroll="card_status" type="button">Verificar pendências</button></div>
+                               
+                        </div>
+                        </div>
+
+                        <!-- card Historico -->
+                        <div class="card rounded-3 mb-4 shadow-sm card_historico">
+                            <!-- card header -->
+                            <div class="card-header bg-white p-4">
+                                <h3 class="mb-0 h4">Histórico de Atividades</h3>
+                            </div>
+                            <!-- card body -->                             
+                            <div class="card-body p-4" style="font-size:14px;">
+                                <table id="tabela_historico_atividades" class="table table-borderless ">
+                                    <thead>
+                                        <tr>
+                                            <th>Status</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- card  -->
+                        <div class="card rounded-3 card_delete">
+                            <div class="card-body p-4">
+                                <p class="mb-0 font-14">
+                                    <i class="fe fe-trash-2 font-20  me-2 text-primary"></i>Você deseja <a href="#" class="btn_excluir_cadastro">excluir</a> seus dados cadastrais <u>permanentemente</u> 
+                                </p>
+                                <div class="spinner-border spinner-border-sm text-primary spinner_excluir" role="status" style="display: none;">
+                                    <span class="sr-only"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="footer bg-dark text-body">
+            <div class="container">
+                <ul class="list-inline" style="padding-top:5px; padding-bottom:3px; margin-bottom:0px;">
+                    <li class="list-inline-item">Copyright © 2020<span id="copyright"> -
+                        <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+                    </span>, Inc.</li>
+                </ul>                        
+            </div>
+        </div>
+    </body>
+</html>
