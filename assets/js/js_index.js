@@ -12,9 +12,9 @@ var status_cadastro = ""
 
 const token = localStorage.getItem('authToken')
 
-var api_key = "eyJzYWx0IjogIldHWkdMWnVYTnExRERkV0JDclZkYUE9PSIsICJpdiI6ICJEVDZzbU1SNFQrdWVjZWl4bkMrdjZ3PT0iLCAiY2lwaGVydGV4dCI6ICJrVnN3Tk9JNkRGdW1tL0JQZm1kcTNSV2E2ZXVXT3c0aU14U0FrNEQ5M1l0akcrQVVUalNkIn0="
-var email_aml = "julianahpereira@gmail.com"
-var key_api_externa_countrystatecity = "Tldqa0ZhMWs1VzhaT0FqcFpJNlZZSVQwdGZya21uZkszQ3ZkZjAzRA=="
+var api_key = ""
+var email_aml = ""
+var key_api_externa_countrystatecity = ""
 
 /*
   --------------------------------------------------------------------------------------------------------------------------------------------------
