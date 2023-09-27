@@ -40,7 +40,7 @@ Esta API desenvolvida em Flask para servir uma aplicação desenvolvida em HTML,
 ---
 ## APIs Externas
 
-Utilizamos 3 APIs externa. 
+Utilizamos 4 APIs externa. 
 
 (i) countrystatecity.in: A API do site countrystatecity.in fornece informações sobre países, estados e cidades. A documentação oficial, localizada no link https://countrystatecity.in/docs/, oferece detalhes sobre como interagir com a API para obter os dados desejados. 
 
