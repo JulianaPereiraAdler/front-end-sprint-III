@@ -38,6 +38,21 @@ Frontend: HTML, CSS, JS
 Esta API desenvolvida em Flask para servir uma aplicação desenvolvida em HTML, CSS e JS.
 
 ---
+## APIs Externas
+
+Utilizamos 3 APIs externa. 
+
+(i) countrystatecity.in: A API do site countrystatecity.in fornece informações sobre países, estados e cidades. A documentação oficial, localizada no link https://countrystatecity.in/docs/, oferece detalhes sobre como interagir com a API para obter os dados desejados. 
+
+(ii) BrasilAPI: A API de CEP da BrasilAPI fornece um serviço que permite consultar informações relacionadas a Códigos de Endereçamento Postal (CEPs) no Brasil. Esta API converte o CEP em informações detalhadas sobre o local correspondente, como rua, bairro, cidade e estado. Link da documentação: https://brasilapi.com.br/docs
+
+(iii) Disify: A API do Disify oferece várias funcionalidades, incluindo a validação de endereços de e-mail para verificar a sua autenticidade e a obtenção de informações detalhadas sobre domínios específicos. A API também fornece informações de Whois de domínios, permitindo aos usuários acessar detalhes sobre o registrante do domínio, informações de contato, e outros dados publicamente disponíveis. Além disso, permite verificar a disponibilidade de domínios para registro e obter screenshots de websites para visualização rápida. Link da documentação: https://docs.disify.com/
+
+(iv) AML Due Diligence: A API AML Due Diligence, fornecida pela AML Reputacional, parece ser uma ferramenta destinada a prover informações e análises relacionadas ao cumprimento de normas de Anti-Lavagem de Dinheiro (AML, do inglês Anti-Money Laundering) e Due Diligence. Documentação: https://www.amlreputacional.com.br/aml-due-diligence/
+
+Por favor insira as chaves disponibilizadas nos slides da Apresentação no arquivo assets/js/index.js do repositório antes de rodar a aplicação.
+
+---
 ## Como executar através do Docker
 
 Após clonar o repositório, navegue ao diretório raiz pelo terminal para executar os comandos abaixo.
